@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+>
+<head>
+    <script src="${context:/mybootstrap/js/jquery-1.11.1.min.js}"></script>
+    <script src="${context:/mybootstrap/js/jquery-ui.1.11.2.min.js}"></script>
+    <script src="${context:/mybootstrap/js/jquery.canvasjs.min.js}"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        animationEnabled: true,
+                        title:{
+                            text: "Simple Column Chart"
+                        },
+                        data: [
+                            {
+                                type: "column", //change type to bar, line, area, pie,column,spline etc
+                                markerType: "bar",
+
+                                dataPoints: [
+                                    {y: 71, z:12 },
+                                    {y: 55, z:23 },
+                                    {y: 50, z:6  },
+                                    {y: 65, z:2  },
+                                    {y: 95, z:50 },
+                                    {y: 68, z:13 },
+                                    {y: 28, z:21 },
+                                    {y: 34, z:5  },
+                                    {y: 14, z:7  }
+                                ]
+                            },
+                            {
+                                type: "column",
+                                showInLegend: true,
+                                dataPoints: [
+                                    {y: 21 },
+                                    {y: 44},
+                                    {y: 35 },
+                                    {y: 45 },
+                                    {y: 75 },
+                                    {y: 58 },
+                                    {y: 18 },
+                                    {y: 30 },
+                                    {y: 11}
+                                ]
+                            }
+                        ],
+                        legend: {
+                            cursor: "pointer",
+                            itemclick: function (e) {
+                                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                    e.dataSeries.visible = false;
+                                } else {
+                                    e.dataSeries.visible = true;
+                                }
+                                chart.render();
+                            }
+                        }
+                    });
+
+            chart.render();
+        }
+    </script>
+</head>
+<body>
+<div class="row aam-font col-xs-12">
+    <h1>Welcome to hell</h1>
+</div>
+
+<div id="diagram"></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-6" id="chartContainer" style="align-items: center; height: 300px; width: 600px;"></div>
+<div class="col-xs-3"></div>
+
+
+</body>
+</html>

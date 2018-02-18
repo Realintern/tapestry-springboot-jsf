@@ -1,0 +1,18 @@
+<html t:type="layout" title="tt-web com.example"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="span4 offset3">
+            <t:form t:id="changeForm">
+                <h2>Edit User</h2>
+                <t:textfield t:id="userId" t:value="userDto.userId" class="input-block-level" validate="required" readonly="true" />
+                <t:textfield t:id="firstName" t:value="userDto.firstName" class="input-block-level" validate="required" />
+                <t:textarea t:id="lastName" t:value="userDto.lastName" class="input-block-level" validate="required"/>
+                <t:submit value="Update"/>
+            </t:form>
+        </div>  </div>
+</div>
+
+
+</html>
